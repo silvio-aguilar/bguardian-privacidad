@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>BGuardian · Política de Privacidad</title>
+  <meta name="description" content="Política de privacidad de BGuardian: qué datos tratamos, con qué finalidad y cómo ejercer tus derechos." />
+
+  <style>
+    :root{
+      --bg: #ffffff;
+      --bg-soft: #f6f8fa;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --link: #2563eb;
+      --ring: #c7d2fe;
+      --code-bg:#f1f5f9;
+      --shadow: 0 1px 2px rgba(0,0,0,.06), 0 4px 24px rgba(0,0,0,.06);
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0b1220;
+        --bg-soft:#0f172a;
+        --card:#0b1220;
+        --text:#e5e7eb;
+        --muted:#94a3b8;
+        --border:#1f2937;
+        --link:#93c5fd;
+        --ring:#1d4ed8;
+        --code-bg:#0f172a;
+        --shadow: 0 1px 2px rgba(0,0,0,.3), 0 4px 24px rgba(0,0,0,.35);
+      }
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      font: 16px/1.6 ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+            Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+            "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .header{
+      position: sticky; top:0; z-index:20;
+      backdrop-filter: saturate(1.2) blur(6px);
+      background: color-mix(in srgb, var(--bg) 90%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav{
+      max-width: 1000px; margin: 0 auto; padding: .75rem 1rem;
+      display:flex; align-items:center; gap:.75rem;
+    }
+    .logo{
+      display:grid; place-items:center; width:36px; height:36px;
+      border-radius:10px; background:linear-gradient(135deg,#0ea5e9,#3b82f6);
+      color:#fff; font-weight:800; letter-spacing:.5px; box-shadow: var(--shadow);
+    }
+    .brand{font-weight:800; letter-spacing:.2px}
+    .spacer{flex:1}
+    .pill{
+      font-size:.875rem; color:var(--muted); border:1px solid var(--border);
+      padding:.25rem .6rem; border-radius:999px;
+    }
+
+    .wrap{max-width: 1000px; margin: 0 auto; padding: 24px 16px 56px}
+    .grid{display:grid; grid-template-columns: 280px 1fr; gap: 24px}
+    @media (max-width: 960px){ .grid{grid-template-columns: 1fr} }
+
+    /* Sidebar */
+    .toc{
+      position: sticky; top: 64px;
+      align-self: start;
+      border:1px solid var(--border); border-radius: 12px;
+      background: var(--card); padding: 12px;
+    }
+    .toc h3{margin:8px 10px 6px; font-size:.9rem; color:var(--muted); font-weight:700}
+    .toc a{
+      display:block; padding:8px 10px; border-radius:8px; text-decoration:none;
+      color: var(--text); border:1px solid transparent;
+    }
+    .toc a:hover{ background: var(--bg-soft); border-color: var(--border) }
+    .toc ul{list-style:none; padding:0; margin:0}
+    .toc li{margin: 2px 0}
+
+    /* Doc card */
+    .doc{
+      border:1px solid var(--border); border-radius: 16px;
+      background: var(--card); box-shadow: var(--shadow);
+      padding: 24px;
+    }
+    .doc h1{font-size: clamp(1.6rem, 2.2vw, 2rem); line-height:1.2; margin:.2rem 0 1rem}
+    .doc h2{margin: 1.6rem 0 .5rem; font-size:1.2rem}
+    .doc h3{margin: 1.1rem 0 .4rem; font-size:1rem}
+    .doc p{margin: .5rem 0}
+    .muted{color:var(--muted)}
+    .kbd{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size:.84em; background: var(--code-bg); border:1px solid var(--border);
+      padding:.1rem .35rem; border-radius:6px;
+    }
+    a{ color: var(--link); text-decoration: none }
+    a:hover{ text-decoration: underline }
+    .callout{
+      border:1px dashed var(--border); background: var(--bg-soft);
+      padding: 12px 14px; border-radius: 12px; margin: 12px 0;
+    }
+    .list-bullet {padding-left: 1.1rem}
+    .list-bullet li{ margin:.4rem 0 }
+
+    .footer{
+      max-width: 1000px; margin: 24px auto 56px; padding: 0 16px;
+      color: var(--muted); font-size:.9rem;
+    }
+    .divider{height:1px; background:var(--border); margin:20px 0}
+
+    /* Anchor offsets for sticky header */
+    .anchor-offset{scroll-margin-top: 84px}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="logo">BG</div>
+      <div class="brand">BGuardian</div>
+      <div class="spacer"></div>
+      <span class="pill">Política de Privacidad</span>
+    </nav>
+  </header>
+
+  <main class="wrap grid">
+    <!-- Sidebar / ToC -->
+    <aside class="toc" aria-label="Tabla de contenidos">
+      <h3>Contenido</h3>
+      <ul>
+        <li><a href="#intro">Introducción</a></li>
+        <li><a href="#responsable">1. Responsable</a></li>
+        <li><a class="anchor-link" href="#datos">2. Datos que tratamos</a></li>
+        <li><a href="#finalidades">3. Finalidades</a></li>
+        <li><a href="#base">4. Base jurídica</a></li>
+        <li><a href="#alojamiento">5. Alojamiento (Firebase)</a></li>
+        <li><a href="#conservacion">6. Conservación</a></li>
+        <li><a href="#cesiones">7. Cesiones y terceros</a></li>
+        <li><a href="#seguridad">8. Seguridad</a></li>
+        <li><a href="#derechos">9. Tus derechos</a></li>
+        <li><a href="#eliminacion">10. Eliminación de cuenta</a></li>
+        <li><a href="#menores">11. Menores</a></li>
+        <li><a href="#cambios">12. Cambios</a></li>
+        <li><a href="#moderacion">13. Normas de la comunidad</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </aside>
+
+    <!-- Document -->
+    <article class="doc">
+      <header>
+        <h1 id="intro" class="anchor-offset">Política de Privacidad</h1>
+        <p class="muted">Última actualización: <span id="today"></span></p>
+        <p>
+          En <strong>BGuardian</strong> respetamos tu privacidad. Esta política explica qué datos
+          tratamos, con qué finalidad y cómo ejercer tus derechos. La app está orientada a la
+          seguridad comunitaria y <strong>no</strong> monetiza datos personales.
+        </p>
+        <div class="callout">
+          <strong>Resumen rápido:</strong> autenticación por email, creación de alertas con
+          metadatos (incluida ubicación si la autorizas) y uso de cámara/galería para adjuntar
+          imágenes. Backend en Firebase (Google).
+        </div>
+      </header>
+
+      <section>
+        <h2 id="responsable" class="anchor-offset">1. Responsable del tratamiento</h2>
+        <p><strong>Equipo de BGuardian</strong></p>
+        <p>Contacto: <a href="mailto:bguardian.app@gmail.com">bguardian.app@gmail.com</a></p>
+        <p class="muted">
+          “Basque Guardian” (personaje público) y el desarrollador actúan de forma independiente.
+          La relación se limita a la prestación de servicios técnicos. No existe asociación, sociedad
+          ni colaboración editorial.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="datos" class="anchor-offset">2. Datos que tratamos</h2>
+        <ul class="list-bullet">
+          <li><strong>Datos de cuenta</strong>: email y nombre/alias que proporciones.</li>
+          <li><strong>Contenido generado</strong>: alertas/publicaciones y metadatos
+              (p. ej., fecha, tipo y ubicación si la autorizas).</li>
+          <li><strong>Permisos</strong> (solo si los concedes):
+            <ul>
+              <li><span class="kbd">Ubicación</span>: para mostrar alertas cercanas o geolocalizar una alerta.</li>
+              <li><span class="kbd">Cámara</span> y <span class="kbd">Galería</span>: para adjuntar imágenes.</li>
+            </ul>
+          </li>
+          <li><strong>Datos técnicos mínimos</strong>: identificadores internos y registros de
+              seguridad para prevenir abuso y mejorar el funcionamiento.</li>
+        </ul>
+        <p><em>No</em> recabamos datos innecesarios ni vendemos tus datos a terceros.</p>
+      </section>
+
+      <section>
+        <h2 id="finalidades" class="anchor-offset">3. Finalidades del tratamiento</h2>
+        <ul class="list-bullet">
+          <li>Permitir el acceso de usuarios a la app (autenticación).</li>
+          <li>Crear, visualizar y moderar alertas/publicaciones.</li>
+          <li>Mantener la seguridad e integridad del servicio.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 id="base" class="anchor-offset">4. Base jurídica</h2>
+        <p>
+          Ejecución del servicio solicitado (uso de la app) e interés legítimo en mantener la
+          seguridad y el correcto funcionamiento del sistema.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="alojamiento" class="anchor-offset">5. Dónde se alojan los datos (Firebase)</h2>
+        <p>
+          Utilizamos <strong>Firebase</strong> (Google) como backend y almacenamiento.
+          Firebase actúa como <em>encargado del tratamiento</em>.
+        </p>
+        <p>
+          Más información: <a href="https://firebase.google.com/support/privacy?hl=es" target="_blank" rel="noopener">Privacidad en Firebase</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="conservacion" class="anchor-offset">6. Conservación</h2>
+        <p>
+          Conservamos los datos mientras mantengas tu cuenta activa o sean necesarios para prestar
+          el servicio. Puedes solicitar su eliminación en cualquier momento.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="cesiones" class="anchor-offset">7. Cesiones y terceros</h2>
+        <p>
+          No vendemos ni cedemos tus datos a terceros con fines comerciales. Compartimos únicamente
+          con proveedores estrictamente necesarios para el funcionamiento (p. ej., Firebase).
+        </p>
+      </section>
+
+      <section>
+        <h2 id="seguridad" class="anchor-offset">8. Seguridad</h2>
+        <p>
+          Aplicamos medidas técnicas y organizativas razonables para proteger tus datos frente a
+          accesos no autorizados, pérdida o alteración. Ningún sistema es 100% infalible.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="derechos" class="anchor-offset">9. Tus derechos</h2>
+        <ul class="list-bullet">
+          <li><strong>Acceso</strong>: conocer qué datos tratamos sobre ti.</li>
+          <li><strong>Rectificación</strong>: corregir información inexacta o incompleta.</li>
+          <li><strong>Supresión</strong>: solicitar el borrado de tu cuenta y de tus datos.</li>
+          <li><strong>Oposición / Limitación</strong>: oponerte a ciertos tratamientos o limitar su alcance.</li>
+        </ul>
+        <p>
+          Para ejercer tus derechos: <a href="mailto:bguardian.app@gmail.com">bguardian.app@gmail.com</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="eliminacion" class="anchor-offset">10. Eliminación de cuenta</h2>
+        <p>
+          Si deseas borrar tu cuenta y los datos asociados, envíanos un correo indicando la dirección
+          con la que te registraste: <a href="mailto:bguardian.app@gmail.com">bguardian.app@gmail.com</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="menores" class="anchor-offset">11. Menores de edad</h2>
+        <p>
+          Si detectamos que un menor utiliza la app sin el consentimiento exigible por la normativa
+          aplicable, podremos limitar el acceso o eliminar la cuenta.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="cambios" class="anchor-offset">12. Cambios en esta política</h2>
+        <p>
+          Podemos actualizar esta política para reflejar mejoras o requisitos legales. Publicaremos
+          los cambios en esta misma página.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="moderacion" class="anchor-offset">13. Normas de la comunidad y moderación</h2>
+        <p>Para proteger a la comunidad, BGuardian puede revisar, ocultar o eliminar contenido, y suspender cuentas que incumplan estas normas:</p>
+        <ul class="list-bullet">
+          <li>Prohibido el contenido que promueva odio, discriminación o deshumanización.</li>
+          <li>Sin amenazas, acoso o incitación a la violencia.</li>
+          <li>Sin propaganda extremista ni apoyo a organizaciones violentas.</li>
+          <li>Sin difundir datos personales de terceros (doxing) o información sensible sin consentimiento.</li>
+          <li>Sin contenido ilegal, pornografía, explotación de menores o actividades delictivas.</li>
+          <li>Evita desinformación peligrosa y el spam.</li>
+        </ul>
+        <p>
+          Si consideras que tu contenido fue moderado por error, escribe a
+          <a href="mailto:bguardian.app@gmail.com">bguardian.app@gmail.com</a> para solicitar revisión.
+        </p>
+      </section>
+
+      <div class="divider"></div>
+
+      <section>
+        <h2 id="contacto" class="anchor-offset">Contacto</h2>
+        <p>
+          Soporte: <a href="mailto:bguardian.app@gmail.com">bguardian.app@gmail.com</a>
+        </p>
+        <p class="muted">
+          Transparencia: no utilizamos tus datos con fines publicitarios ni los vendemos a terceros.
+          Se procesan únicamente en Firebase para autenticación y funcionamiento de la app.
+        </p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer">
+    © <span id="year"></span> BGuardian · Seguridad Ciudadana
+  </footer>
+
+  <script>
+    const now = new Date();
+    const format = now.toLocaleDateString('es-ES', { day:'2-digit', month:'short', year:'numeric' });
+    document.getElementById('today').textContent = format;
+    document.getElementById('year').textContent = now.getFullYear();
+  </script>
+</body>
+</html>
